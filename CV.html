@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahlori Baloyi - Curriculum Vitae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #0A0A0A;
+            --secondary-dark: #121212;
+            --card-dark: #1A1A1A;
+            --accent-green: #00FF88;
+            --accent-green-dark: #00CC6C;
+            --accent-green-light: rgba(0, 255, 136, 0.1);
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+            --text-tertiary: #888888;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --hover-shadow: 0 12px 48px rgba(0, 255, 136, 0.15);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cv-container {
+            background: var(--secondary-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Header */
+        .cv-header {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cv-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-green), #4CFFB3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cv-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Grid */
+        .cv-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        /* Left Column */
+        .cv-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Right Column */
+        .cv-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Section Styling */
+        .cv-section {
+            background: var(--card-dark);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .cv-section:hover {
+            border-color: rgba(0, 255, 136, 0.2);
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent-green-light);
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-green-light);
+            border-radius: 10px;
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        /* Personal Info */
+        .personal-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .info-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .info-icon {
+            color: var(--accent-green);
+            font-size: 1rem;
+            width: 24px;
+        }
+
+        .info-content h4 {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-content p {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Lists */
+        .cv-list {
+            list-style: none;
+        }
+
+        .cv-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .cv-list li:before {
+            content: '•';
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .cv-list.with-arrows li:before {
+            content: '→';
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+
+        /* Education Items */
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-details {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-period {
+            color: var(--accent-green);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .skill-category:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .skill-category h4 {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-items {
+            list-style: none;
+        }
+
+        .skill-items li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+
+        .skill-items li:before {
+            content: '▸';
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        /* References */
+        .reference-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .reference-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+
+        .reference-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .reference-position {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .reference-contact {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Achievements & Participation */
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .achievement-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .achievement-icon {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        .achievement-content h4 {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .achievement-content p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Action Buttons */
+        .cv-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-green-dark));
+            color: var(--primary-dark);
+            box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-green);
+            border: 2px solid var(--accent-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-green-light);
+            transform: translateY(-3px);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+            }
+            
+            .btn {
+                display: none !important;
+            }
+            
+            .cv-section:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .cv-content {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cv-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cv-header {
+                padding: 2rem 1rem;
+            }
+            
+            .cv-title {
+                font-size: 2rem;
+            }
+            
+            .cv-content {
+                padding: 1rem;
+            }
+            
+            .cv-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <h1 class="cv-title">Curriculum Vitae</h1>
+            <p class="cv-subtitle">Mahlori Baloyi - Business Information Technology Student & Aspiring Developer</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="cv-content">
+            <!-- Left Column -->
+            <div class="cv-left">
+                <!-- Personal Information -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h2 class="section-title">Personal Information</h2>
+                    </div>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user-tag"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Name</h4>
+                                <p>Mahlori Baloyi</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Address</h4>
+                                <p>7371 Mzilikazi ST, Kagiso</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>Mahloribaloyi09@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <p>+27 72 551 9718</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h2 class="section-title">Profile</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                        I am a motivated and ambitious second-year student pursuing a Diploma in Business Information Technology. 
+                        I am very passionate about technology, data management, and software development, with strong technical 
+                        and interpersonal skills. I thrive in collaborative environments and am dedicated to continuous learning 
+                        and professional growth.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="section-title">Education</h2>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3 class="education-title">
+                            <i class="fas fa-university"></i> University of Johannesburg
+                        </h3>
+                        <p class="education-details">Diploma in Business Information Technology</p>
+                        <p class="education-period">2024 – Present (Second Year)</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3 class="education-title">
+                            <i class="fas fa-school"></i> SG Mafaesa Secondary School
+                        </h3>
+                        <p class="education-details">Matriculated as one of the Top learners</p>
+                        <p class="education-period">2019-2023</p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h2 class="section-title">Technical Skills</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Microsoft Office</h4>
+                            <ul class="skill-items">
+                                <li>Microsoft Word</li>
+                                <li>Microsoft Excel</li>
+                                <li>Microsoft PowerPoint</li>
+                                <li>Microsoft Access</li>
+                                <li>Presentation Skills</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Front-End</h4>
+                            <ul class="skill-items">
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>React.js / React Native</li>
+                                <li>Web Development</li>
+                                <li>Mobile App Development</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Back-End</h4>
+                            <ul class="skill-items">
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>MongoDB/li>
+                                <li>API development/li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Other Skills</h4>
+                            <ul class="skill-items">
+                                <li>Analytical Skills</li>
+                                <li>Reporting Skills</li>
+                                <li>Artificial Intelligence Basics</li>
+                                <li>Data Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="cv-right">
+                <!-- Soft Skills -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2 class="section-title">Soft Skills</h2>
+                    </div>
+                    <ul class="cv-list">
+                        <li><strong>Effective Communication:</strong> Clear articulation of ideas and active listening</li>
+                        <li><strong>Critical Thinking:</strong> Analytical approach to problem-solving</li>
+                        <li><strong>Teamwork & Collaboration:</strong> Effective in cross-functional teams</li>
+                        <li><strong>Listening Skills:</strong> Attentive and responsive communication</li>
+                        <li><strong>Conflict Resolution:</strong> Diplomatic approach to resolving issues</li>
+                        <li><strong>Adaptability:</strong> Quick learning and adjustment to new environments</li>
+                        <li><strong>Time Management:</strong> Efficient task prioritization and deadline management</li>
+                    </ul>
+                </div>
+
+                <!-- Achievements -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2 class="section-title">Achievements</h2>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Academic Top 1% UJenius Certificate</h4>
+                            <p>University of Johannesburg - 2024</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Artificial Intelligence Certificate</h4>
+                            <p>University of Johannesburg - 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Participation -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h2 class="section-title">Participation</h2>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h4>Mentorship Programme</h4>
+                            <p>University of Johannesburg - 2025</p>
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.3rem;">
+                                Active participation in peer mentorship and leadership development
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- References -->
+                <div class="cv-section">
+                    <div class="section-header">
+                        <div class="section-icon">
+                            <i class="fas fa-address-book"></i>
+                        </div>
+                        <h2 class="section-title">References</h2>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h3 class="reference-name">Dr. Siyabonga Mhlongo</h3>
+                        <p class="reference-position">University of Johannesburg</p>
+                        <p class="reference-contact">
+                            <i class="fas fa-envelope"></i> siyabongam@uj.ac.za<br>
+                            <i class="fas fa-phone"></i> +27 11 559 1177
+                        </p>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <h3 class="reference-name">Rofiwa Makhuthe</h3>
+                        <p class="reference-position">First-Year Business Analysis, University of Johannesburg</p>
+                        <p class="reference-contact">
+                            <i class="fas fa-envelope"></i> rmmakhuthe@uj.ac.za<br>
+                            <i class="fas fa-phone"></i> +27 11 559 1173
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="cv-actions">
+            <button class="btn btn-primary" onclick="window.print()">
+                <i class="fas fa-print"></i> Print CV
+            </button>
+            <button class="btn btn-secondary" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Add current year to the CV
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const yearElements = document.querySelectorAll('.current-year');
+            yearElements.forEach(el => {
+                el.textContent = year;
+            });
+            
+            // Smooth hover effects
+            const sections = document.querySelectorAll('.cv-section');
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
